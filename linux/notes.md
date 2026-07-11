@@ -1,17 +1,96 @@
+Linux Commands
 
-echo - Output any text that we provide
-whoami - 
-Find out what user we're currently logged in as
-ls - Lists files and directories in the current directory
-cd - Changes the current working directory
-cat -Display the contents of a file in the terminal
-pwd - prints the full path of the current working directory
-find -name *.txt -able to find every .txt file 
-grep - allows us to search the contents of file for specific values.
-wc -l access.log -  to count the number of entries in "access.log"
- grep "81.143.211.90" access.log - to find any entries with the IP address of "81.143.211.90" in "access.log"
-grep -R - can tell grep to search recursively through all files and subdirectories. eg: grep -R "PRETTY_NAME" /etc/
-This will:
-• Search every file in the current directory
-• Search all subdirectories
-• Show where the PRETTY_NAME appears
+echo
+Purpose: Outputs any text that we provide.
+
+Example:
+echo "Hello"
+
+------------------------------------------------
+
+whoami
+Purpose: Finds out which user we're currently logged in as.
+
+Example:
+whoami
+
+------------------------------------------------
+
+ls
+Purpose: Lists files and directories in the current directory.
+
+Examples:
+ls
+ls -l
+ls -la
+
+------------------------------------------------
+
+cd
+Purpose: Changes the current working directory.
+
+Examples:
+cd Documents
+cd ..
+cd ~
+
+------------------------------------------------
+
+cat
+Purpose: Displays the contents of a file in the terminal.
+
+Example:
+cat notes.txt
+
+------------------------------------------------
+
+pwd
+Purpose: Prints the full path of the current working directory.
+
+Example:
+pwd
+
+------------------------------------------------
+
+find -name "*.txt"
+Purpose: Finds every .txt file.
+
+Example:
+find . -name "*.txt"
+
+------------------------------------------------
+
+grep
+Purpose: Searches the contents of a file for specific values.
+
+Example:
+grep "error" log.txt
+
+------------------------------------------------
+
+wc -l access.log
+Purpose: Counts the number of entries (lines) in "access.log".
+
+Example:
+wc -l access.log
+
+------------------------------------------------
+
+grep "81.143.211.90" access.log
+Purpose: Finds all entries containing the IP address "81.143.211.90" in "access.log".
+
+Example:
+grep "81.143.211.90" access.log
+
+------------------------------------------------
+
+grep -R
+Purpose: Searches recursively through all files and subdirectories.
+
+Example:
+grep -R "PRETTY_NAME" /etc/
+
+This command:
+- Searches every file in the specified directory.
+- Searches all subdirectories.
+- Shows where "PRETTY_NAME" appears.
