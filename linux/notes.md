@@ -94,3 +94,51 @@ This command:
 - Searches every file in the specified directory.
 - Searches all subdirectories.
 - Shows where "PRETTY_NAME" appears.
+
+------------------------------------------------
+
+du
+Purpose: Displays the disk usage of files and directories.
+
+Example:
+du
+
+------------------------------------------------
+
+du -a
+Purpose: Lists the disk usage of both files and directories.
+
+Example:
+du -a
+
+------------------------------------------------
+
+du -h
+Purpose: Displays file and directory sizes in a human-readable format (B, KB, MB, GB).
+
+Example:
+du -h
+
+------------------------------------------------
+
+du -c
+Purpose: Prints the total disk usage at the end of the output.
+
+Example:
+du -c
+
+------------------------------------------------
+
+du -d <number>
+Purpose: Displays the disk usage up to the specified directory depth.
+
+Example:
+du -d 2
+
+------------------------------------------------
+
+du --time
+Purpose: Displays the last modification timestamp along with the disk usage.
+
+Example:
+du --time
