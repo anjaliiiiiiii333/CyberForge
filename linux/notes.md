@@ -135,6 +135,134 @@ Purpose: Displays the disk usage up to the specified directory depth.
 Example:
 du -d 2
 
+grep
+
+Purpose:
+Searches for a specific word or pattern inside a file.
+
+Example:
+grep "user" file.txt
+
+------------------------------------------------
+
+grep -R
+
+Purpose:
+Searches recursively through all files and subdirectories.
+
+Example:
+grep -R "PRETTY_NAME" /etc/
+
+------------------------------------------------
+
+grep -h
+
+Purpose:
+Hides the filename from the output when searching recursively.
+
+Example:
+grep -Rh "pattern" folder/
+
+------------------------------------------------
+
+grep -c
+
+Purpose:
+Displays only the number of times a pattern appears in a file.
+
+Example:
+grep -c "error" log.txt
+
+------------------------------------------------
+
+grep -i
+
+Purpose:
+Searches for a pattern while ignoring uppercase and lowercase letters.
+
+Example:
+grep -i "password" file.txt
+
+------------------------------------------------
+
+grep -l
+
+Purpose:
+Displays only the names of files that contain the specified pattern.
+
+Example:
+grep -l "password" *.txt
+
+------------------------------------------------
+
+grep -n
+
+Purpose:
+Displays the matching line along with its line number.
+
+Example:
+grep -n "password" file.txt
+
+------------------------------------------------
+
+grep -v
+
+Purpose:
+Displays all lines that do NOT contain the specified pattern.
+
+Example:
+grep -v "error" log.txt
+
+------------------------------------------------
+
+grep -E
+
+Purpose:
+Treats the search pattern as an Extended Regular Expression (ERE).
+
+Example:
+grep -E "user|admin" file.txt
+
+Notes:
+Useful for searching using regular expressions.
+
+------------------------------------------------
+
+grep -e
+
+Purpose:
+Searches for multiple patterns in a single command.
+
+Example:
+grep -e "user" -e "admin" file.txt
+
+Notes:
+Multiple `-e` flags can be used to search for multiple patterns.
+Unlike `-E`, `-e` can be used multiple times in the same command.
+
+------------------------------------------------
+
+Lab Activity
+
+Objective:
+Practice using the `grep` command and its important flags.
+
+Task:
+Downloaded the practice file provided in the TryHackMe Linux Modules room and used `grep` to search for information.
+
+Commands Used:
+grep user grep.txt
+grep password grep.txt
+grep comment grep.txt
+
+Findings:
+User: bobthebuilder
+Password: LinuxIsGawd
+Comment: fs0ciety
+
+Learning Outcome:
+Learned how to use `grep` to search for specific patterns in files and understood how different flags make searching more efficient.
+
 ------------------------------------------------
 
 du --time
