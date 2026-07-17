@@ -263,10 +263,180 @@ Comment: fs0ciety
 Learning Outcome:
 Learned how to use `grep` to search for specific patterns in files and understood how different flags make searching more efficient.
 
+String Manipulation (String Operations)
+
+Purpose:
+String manipulation is the process of modifying, extracting, filtering, replacing, formatting, or processing text in Linux.
+
+Used By:
+- SOC Analysts
+- Penetration Testers
+- System Administrators
+- CTF Players
+- Bash Scripting
+
+Notes:
+These commands are commonly used to process and analyze large log files efficiently.
+
 ------------------------------------------------
 
-du --time
-Purpose: Displays the last modification timestamp along with the disk usage.
+tr
+
+Purpose:
+Translates or deletes characters from the input.
 
 Example:
-du --time
+echo "cyberforge" | tr 'a-z' 'A-Z'
+
+Output:
+CYBERFORGE
+
+------------------------------------------------
+
+tr
+
+Purpose:
+Replaces spaces with hyphens.
+
+Example:
+echo "Cyber Forge" | tr ' ' '-'
+
+Output:
+Cyber-Forge
+
+------------------------------------------------
+
+tr -d
+
+Purpose:
+Deletes specified characters from the input.
+
+Example:
+echo "abc123xyz" | tr -d '0-9'
+
+Output:
+abcxyz
+
+------------------------------------------------
+
+awk
+
+Purpose:
+Processes and extracts data from text based on fields (columns).
+
+Example:
+echo "Anjali SOC 20" | awk '{print $1}'
+
+Output:
+Anjali
+
+------------------------------------------------
+
+awk
+
+Purpose:
+Prints the second field.
+
+Example:
+echo "Anjali SOC 20" | awk '{print $2}'
+
+Output:
+SOC
+
+------------------------------------------------
+
+awk
+
+Purpose:
+Prints multiple fields.
+
+Example:
+echo "Anjali SOC Analyst" | awk '{print $1,$3}'
+
+Output:
+Anjali Analyst
+
+------------------------------------------------
+
+awk '{print}' file.txt
+
+Purpose:
+Prints the contents of a file.
+
+Example:
+awk '{print}' file.txt
+
+------------------------------------------------
+
+awk '/ctf/' file.txt
+
+Purpose:
+Prints only the lines containing a specific pattern.
+
+Example:
+awk '/ctf/' file.txt
+
+------------------------------------------------
+
+awk '{print NR,$0}' file.txt
+
+Purpose:
+Prints each line along with its line number.
+
+Example:
+awk '{print NR,$0}' file.txt
+
+------------------------------------------------
+
+AWK Variables
+
+$1
+Meaning:
+First field.
+
+------------------------------------------------
+
+$2
+Meaning:
+Second field.
+
+------------------------------------------------
+
+$3
+Meaning:
+Third field.
+
+------------------------------------------------
+
+$0
+Meaning:
+Represents the entire line.
+
+------------------------------------------------
+
+NR
+
+Meaning:
+Represents the current line number.
+
+------------------------------------------------
+
+sort
+
+Purpose:
+Sorts lines of text alphabetically or numerically.
+
+Example:
+sort file.txt
+
+------------------------------------------------
+
+uniq
+
+Purpose:
+Removes or displays duplicate lines from sorted data.
+
+Example:
+uniq file.txt
+------------------------------------------------
+
