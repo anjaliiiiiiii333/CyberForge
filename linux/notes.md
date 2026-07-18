@@ -440,3 +440,278 @@ Example:
 uniq file.txt
 ------------------------------------------------
 
+sed (Stream Editor)
+
+Purpose:
+sed is a command-line tool used to process and edit text streams without opening a text editor.
+
+Common Uses:
+- Find and replace text
+- Search for patterns
+- Delete lines
+- Insert or modify text
+- Filter output
+- Perform batch text editing
+
+------------------------------------------------
+
+sed 's/Linux/Kali/' file.txt
+
+Purpose:
+Replaces the first occurrence of "Linux" with "Kali" on each line.
+
+Example:
+sed 's/Linux/Kali/' file.txt
+
+------------------------------------------------
+
+sed 's/cat/dog/g' file.txt
+
+Purpose:
+Replaces every occurrence of "cat" with "dog" on each line.
+
+Example:
+sed 's/cat/dog/g' file.txt
+
+------------------------------------------------
+
+sed 's/linux/Kali/gi' file.txt
+
+Purpose:
+Replaces all occurrences while ignoring uppercase and lowercase differences.
+
+Example:
+sed 's/linux/Kali/gi' file.txt
+
+------------------------------------------------
+
+sed -n '/error/p' logfile.txt
+
+Purpose:
+Displays only the lines containing the pattern.
+
+Example:
+sed -n '/error/p' logfile.txt
+
+------------------------------------------------
+
+sed '/error/d' logfile.txt
+
+Purpose:
+Deletes all lines containing the pattern.
+
+Example:
+sed '/error/d' logfile.txt
+
+------------------------------------------------
+
+sed '2d' file.txt
+
+Purpose:
+Deletes line 2.
+
+Example:
+sed '2d' file.txt
+
+------------------------------------------------
+
+sed '3,6d' file.txt
+
+Purpose:
+Deletes lines 3 through 6.
+
+Example:
+sed '3,6d' file.txt
+
+------------------------------------------------
+
+sed -n '5,10p' file.txt
+
+Purpose:
+Prints lines 5 to 10 only.
+
+Example:
+sed -n '5,10p' file.txt
+
+------------------------------------------------
+
+sed '1,3 s/john/JOHN/g' file.txt
+
+Purpose:
+Replaces every occurrence of "john" with "JOHN" only in lines 1 to 3.
+
+Example:
+sed '1,3 s/john/JOHN/g' file.txt
+
+------------------------------------------------
+
+sed 's/apple/orange/2' file.txt
+
+Purpose:
+Replaces the second occurrence of "apple" on each line.
+
+Example:
+sed 's/apple/orange/2' file.txt
+
+------------------------------------------------
+
+sed 's/apple/orange/2g' file.txt
+
+Purpose:
+Replaces from the second occurrence onward.
+
+Example:
+sed 's/apple/orange/2g' file.txt
+
+------------------------------------------------
+
+sed -e 's/Linux/Kali/' -e 's/SOC/Blue Team/' file.txt
+
+Purpose:
+Executes multiple sed commands in a single command.
+
+Example:
+sed -e 's/Linux/Kali/' -e 's/SOC/Blue Team/' file.txt
+
+------------------------------------------------
+
+sed -f script.sed file.txt
+
+Purpose:
+Reads and executes sed commands from a script file.
+
+Example:
+sed -f script.sed file.txt
+
+------------------------------------------------
+
+sed -E 's/[0-9]+/NUMBER/g' file.txt
+
+Purpose:
+Enables extended regular expressions.
+
+Example:
+sed -E 's/[0-9]+/NUMBER/g' file.txt
+
+Output:
+Replaces all numbers with the word NUMBER.
+
+------------------------------------------------
+
+echo "abc" | sed 'y/abc/xyz/'
+
+Purpose:
+Translates characters one by one.
+
+Example:
+echo "abc" | sed 'y/abc/xyz/'
+
+Output:
+xyz
+
+------------------------------------------------
+
+Important Flags
+
+-e
+
+Purpose:
+Executes one or more sed commands.
+
+Example:
+sed -e 's/a/b/' file.txt
+
+------------------------------------------------
+
+-f
+
+Purpose:
+Reads commands from a script file.
+
+Example:
+sed -f script.sed file.txt
+
+------------------------------------------------
+
+-E
+
+Purpose:
+Enables extended regular expressions.
+
+Example:
+sed -E 's/[0-9]+/NUM/g'
+
+------------------------------------------------
+
+-n
+
+Purpose:
+Suppresses automatic output.
+
+Notes:
+Usually used together with the p command.
+
+Example:
+sed -n '/root/p' passwd.txt
+
+------------------------------------------------
+
+Common Cybersecurity Examples
+
+Replace localhost with an IP address
+
+Purpose:
+Replace "localhost" with "127.0.0.1".
+
+Example:
+sed 's/localhost/127.0.0.1/g' config.txt
+
+------------------------------------------------
+
+Delete blank lines
+
+Purpose:
+Remove empty lines from a file.
+
+Example:
+sed '/^$/d' file.txt
+
+------------------------------------------------
+
+Show failed login attempts
+
+Purpose:
+Display only lines containing "Failed".
+
+Example:
+sed -n '/Failed/p' auth.log
+
+------------------------------------------------
+
+Remove comment lines
+
+Purpose:
+Delete lines starting with #.
+
+Example:
+sed '/^#/d' config.conf
+
+------------------------------------------------
+
+Show only IP addresses
+
+Purpose:
+Display only lines containing IPv4 addresses using regular expressions.
+
+Example:
+sed -n -E '/([0-9]{1,3}\.){3}[0-9]{1,3}/p' access.log
+
+------------------------------------------------
+
+Replace tabs with spaces
+
+Purpose:
+Replace every tab character with a space.
+
+Example:
+sed 's/\t/ /g' file.txt
