@@ -715,3 +715,155 @@ Replace every tab character with a space.
 
 Example:
 sed 's/\t/ /g' file.txt
+
+sort
+
+Purpose:
+The sort command arranges lines of text in alphabetical or numerical order.
+
+Syntax:
+sort filename
+
+Notes:
+sort is commonly used before uniq because uniq only removes adjacent duplicate lines.
+
+------------------------------------------------
+
+sort -r
+
+Purpose:
+Sorts lines in reverse order.
+
+Example:
+sort -r file.txt
+
+------------------------------------------------
+
+sort -c
+
+Purpose:
+Checks whether a file is already sorted.
+
+Example:
+sort -c file.txt
+
+------------------------------------------------
+
+sort -u
+
+Purpose:
+Sorts the file and removes duplicate lines.
+
+Example:
+sort -u file.txt
+
+------------------------------------------------
+
+sort -o
+
+Purpose:
+Saves the sorted output to another file.
+
+Example:
+sort -o output.txt file.txt
+
+------------------------------------------------
+
+uniq
+
+Purpose:
+Removes or filters duplicate adjacent lines from a file or command output.
+
+Syntax:
+uniq filename
+
+Notes:
+uniq only removes adjacent duplicate lines. It is commonly used together with sort.
+
+------------------------------------------------
+
+sort file.txt | uniq
+
+Purpose:
+Sorts the file first, then removes duplicate lines.
+
+Example:
+sort file.txt | uniq
+
+------------------------------------------------
+
+uniq -c
+
+Purpose:
+Counts how many times each line appears.
+
+Example:
+sort hello.txt | uniq -c
+
+Output:
+2 hello future soc analyst..
+1 you are doing great..you are stepping closer to your dream.
+
+------------------------------------------------
+
+uniq -d
+
+Purpose:
+Displays only duplicate lines.
+
+Example:
+sort hello.txt | uniq -d
+
+Output:
+hello future soc analyst..
+
+------------------------------------------------
+
+uniq -u
+
+Purpose:
+Displays only unique (non-duplicate) lines.
+
+Example:
+sort hello.txt | uniq -u
+
+Output:
+you are doing great..you are stepping closer to your dream.
+
+------------------------------------------------
+
+uniq -i
+
+Purpose:
+Ignores uppercase and lowercase differences while comparing lines.
+
+Example:
+sort hello.txt | uniq -i
+
+Notes:
+Lines such as "Hello" and "hello" are treated as the same.
+
+------------------------------------------------
+
+Lab Activity
+
+Platform:
+TryHackMe - Linux Modules
+
+Objective:
+Learn how to sort text and remove duplicate lines using the sort and uniq commands.
+
+Commands Practiced:
+sort
+sort -r
+sort -c
+sort -u
+sort -o
+uniq
+uniq -c
+uniq -d
+uniq -u
+uniq -i
+
+Learning Outcome:
+Learned how to organize text files, identify duplicate entries, count repeated lines, display unique or duplicate lines, and combine sort with uniq to efficiently process log files.
